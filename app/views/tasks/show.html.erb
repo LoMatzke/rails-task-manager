@@ -1,0 +1,13 @@
+<div class="container">
+  <h1> <%= @task.title %> </h1>
+  <br>
+  <p> Details: <%= @task.details %> </p>
+  <p> Completed: <%= @task.completed ? "Yes " "✅" : "No " "❌" %> </p>
+
+  <br>
+  <br>
+  <%= link_to "Edit your Task", edit_task_url %>
+  <br>
+  <br>
+  <%= link_to "Back to List", tasks_path %>
+</div>

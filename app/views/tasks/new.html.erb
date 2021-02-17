@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Create a new Task!</h1>
+
+<%# gives error message when trying to create a new taks without title, also check task.rb %>
+
+  <div>
+    <% if @task.errors.present? %>
+      <% @task.errors.full_messages.each do |message| %>
+      <p><%= message %> </p>
+      <% end %>
+    <% end %>
+  </div>
+
+
+  <%= form_for @task do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to "Back to List", tasks_path %>
+
+</div>
